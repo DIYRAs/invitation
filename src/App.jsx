@@ -59,7 +59,7 @@ const App = () => {
         </div>
 
         {isOpen &&
-          <label className="swap fixed top-5 right-118 z-[1999] text-black">
+          <label className="swap fixed top-[12px] right-[470px] z-[1999] text-black">
             {/* this hidden checkbox controls the state */}
             <input onClick={audioPlay} type="checkbox" />
 
