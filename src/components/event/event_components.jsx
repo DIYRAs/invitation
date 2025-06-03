@@ -1,11 +1,14 @@
 import React from 'react'
 
 const Event_components = ({ title, date, time, loc, addr }) => {
+    let style = ''
+    title == 'AKAD' ? style = 'border-b' : style = 'border-t'
+
     return (
-        <div className='w-full border-l border-b p-3 bg-black/20 backdrop-blur-[3px] rounded-2xl'
-            style={{ boxShadow: 'inset 0 0 10px wheat, 0 0 5px black' }}>
-            <div>
-                <p className='text-3xl mb-3'>{title}</p>
+        <div data-aos='flip-up'
+            className={`w-full border-l ${style} p-3 rounded-2xl`}>
+            <div className='font-semibold'>
+                <p className='text-3xl mb-3 font-serif'>{title}</p>
                 <p>{date}</p>
                 <p>{time}</p>
                 <p>{loc}</p>

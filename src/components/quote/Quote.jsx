@@ -1,12 +1,9 @@
 import { forwardRef } from 'react'
-import { motion } from 'framer-motion'
 import Decorations from './decorations'
 
 const Quote = forwardRef((props, ref) => {
     return (
-        <section ref={ref} className='h-max p-8 text-black bg-fixed bg-contain bg-white'
-        // style={{ backgroundImage: 'url(assets/image/bg-blue-flower-1.webp)' }}
-        >
+        <section ref={ref} className='h-max p-8 text-black bg-fixed bg-contain bg-white'>
             <Decorations />
 
             <div className='w-full h-max p-6 rounded-lg px-2 flex flex-col items-center'>

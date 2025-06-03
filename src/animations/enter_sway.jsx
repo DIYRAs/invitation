@@ -1,10 +1,20 @@
 import { motion, useAnimation, useInView } from "framer-motion"
 import { memo, useEffect, useRef } from "react"
 
-const Enter_sway = ({ img, className, rotate, initialRotate = 0, delay = 0 }) => {
+const Enter_sway = ({
+    img,
+    className,
+    rotate,
+    initialRotate = 0,
+    delay = 0,
+    triggerRef = null, // Tambahkan prop triggerRef
+}) => {
     const controls = useAnimation()
-    const ref = useRef(null)
-    const inView = useInView(ref, { once: true })
+    const localRef = useRef(null)
+
+    // Gunakan triggerRef jika disediakan, kalau tidak pakai localRef
+    const refToUse = triggerRef || localRef
+    const inView = useInView(refToUse, { once: true })
 
     useEffect(() => {
         if (inView) {
@@ -32,7 +42,7 @@ const Enter_sway = ({ img, className, rotate, initialRotate = 0, delay = 0 }) =>
 
     return (
         <motion.img
-            ref={ref}
+            ref={localRef} // Tetap pasangkan img ke ref lokal (bukan triggerRef)
             loading="lazy"
             src={img}
             className={className}

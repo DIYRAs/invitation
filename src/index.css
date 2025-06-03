@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+.ephesis-regular {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.thanks {
+    font-family: "Ephesis", cursive;
+}
+
 * {
     scrollbar-width: none;
 }

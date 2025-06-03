@@ -4,8 +4,10 @@ const Opening = () => {
     return (
         <>
             <img className='absolute top-0 w-6/12 object-cover mt-10'
+                style={{ filter: 'drop-shadow(0 0 5px white)' }}
                 src="assets/image/bismillah.png" alt="bismillah" />
-            <div className='mb-16 text-center px-8 space-y-2 bg-black/50'>
+            <div data-aos='flip-left'
+             className='mb-16 text-center px-8 space-y-2 bg-black/50'>
                 <span className='italic text-center text-[14px] opacity-80'>
                     "Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang"
                 </span>

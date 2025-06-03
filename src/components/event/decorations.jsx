@@ -5,8 +5,9 @@ import Enter_spin from '../../animations/enter_spin'
 const Decorations = () => {
     return (
         <>
-            <img className='absolute -left-20 top-52'
-                src="assets/image/orange-flower-2.png" />
+            <Enter_spin
+                img={"assets/image/orange-flower-2.png"}
+                className={'absolute -left-20 top-42'} />
 
             <Enter_spin
                 img={'assets/image/orange-flower-2.png'}
@@ -14,9 +15,9 @@ const Decorations = () => {
 
             <Enter_sway
                 img={'assets/image/orange-flower-1.png'}
-                className={'absolute -right-100 -top-160 -z-10 rotate-[120deg] origin-bottom'}
-                rotate={['120deg', '110deg', '120deg']}
-                initialRotate={'120deg'} />
+                className={'absolute -rotate-[10deg] -right-56 -top-20 -z-10 origin-bottom'}
+                rotate={['-10deg', '0', '-10deg']}
+                initialRotate={'-10deg'} />
         </>
     )
 }
