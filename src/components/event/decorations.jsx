@@ -7,7 +7,7 @@ const Decorations = forwardRef((props, ref) => {
         <>
             <Enter_spin
                 img={"assets/image/orange-flower-2.png"}
-                className={'absolute -left-20 top-42'} />
+                className={'absolute -left-30 top-54'} />
 
             <Enter_spin
                 img={'assets/image/orange-flower-2.png'}

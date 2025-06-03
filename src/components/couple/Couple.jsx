@@ -3,7 +3,7 @@ import Decorations from './decorations'
 
 const Couple = () => {
     return (
-        <section className='h-max pb-12 pt-24 text-white bg-fixed bg-bottom bg-contain'
+        <section className='h-max pb-12 pt-24 text-white bg-fixed bg-bottom bg-cover'
             style={{ backgroundImage: 'url(assets/image/bg-sakura-1.jpg)' }}>
 
             <div data-aos='flip-left'
