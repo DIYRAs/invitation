@@ -2,11 +2,14 @@ import React from 'react'
 import Event_components from './event_components'
 import Countdown from './countdown'
 import Map from './map'
+import Decorations from './decorations'
 
 const Event = () => {
     return (
-        <section className='h-max pt-16 px-12 text-white bg-fixed bg-[100%_55%]'
-            style={{ backgroundImage: 'url(assets/image/bg-orange-flower-2.jpg)' }}>
+        <section className='h-max pt-16 px-12 text-black bg-fixed bg-center bg-white'
+        // style={{ backgroundImage: 'url(assets/image/bg-orange-flower.jpg)' }}
+        >
+            <Decorations />
             <Event_components
                 title={'AKAD'}
                 date={'Minggu, 19 0 19 1999'}

@@ -1,18 +1,29 @@
-import React from 'react'
+import React, { memo } from 'react'
+import Enter_sway from '../../animations/enter_sway'
 
 const Decorations = () => {
     return (
         <>
-            <img className='absolute bottom-0 left-0 -z-10 object-center object-cover h-7/12 blur-[1px]'
-                src="assets/image/pink-flower-2.png" alt="flower-decoration" />
+            <Enter_sway
+                img={'assets/image/pink-flower-4.png'}
+                rotate={['0deg', '10deg', '0']}
+                className={'absolute -top-30 -left-0 object-center rotate-[90deg] object-cover origin-bottom-left h-4/12 blur-[1px]'} />
 
-            <img className='absolute -bottom-0 -right-56 -rotate-[30deg] origin-bottom z-[1] object-cover h-7/12'
-                src="assets/image/pink-flower-1.png" alt="flower-decoration" />
+            <Enter_sway
+                img={'/assets/image/pink-flower-1.webp'}
+                rotate={['-30deg', '-20deg', '-30deg']}
+                initialRotate={'-30deg'}
+                className='absolute -bottom-0 origin-bottom -right-40 h-7/12'
+            />
 
-            <img className='absolute -bottom-32 -right-56 -rotate-[30deg] z-[1] origin-bottom object-cover h-7/12'
-                src="assets/image/pink-flower-1.png" alt="flower-decoration" />
+            <Enter_sway
+                img={'assets/image/pink-flower-1.webp'}
+                rotate={['-20deg', '-30deg', '-20deg']}
+                initialRotate={'-20deg'}
+                className='absolute bottom-24 origin-bottom -right-40 h-7/12'
+            />
         </>
     )
 }
 
-export default Decorations
+export default memo(Decorations)
