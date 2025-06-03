@@ -32,7 +32,7 @@ const Countdown = () => {
     }, [])
 
     return (
-        <div className="grid grid-flow-col text-3xl gap-5 my-10 text-center auto-cols-max">
+        <div className="grid grid-flow-col text-3xl z-10 gap-5 my-10 text-center auto-cols-max">
             <div className="flex flex-col items-center">
                 <span className="countdown font-mono">{timeLeft.days}</span>
                 <span className="text-base font-medium">days</span>

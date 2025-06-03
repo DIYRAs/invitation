@@ -1,7 +1,10 @@
 import Decorations from './decorations'
+import { useRef } from 'react'
 import Enter_once from '../../animations/enter_once'
 
 const Cover = ({ isOpen, setOpen, setPlay }) => {
+    const triggerRef = useRef(null)
+
     const openInvitation = () => {
         setOpen(prev => !prev)
         setPlay(prev => !prev)
@@ -12,11 +15,11 @@ const Cover = ({ isOpen, setOpen, setPlay }) => {
             <section style={{ backgroundImage: 'url(assets/image/bg-white-flower-1.webp)' }}
                 className='h-screen relative text-black justify-center py-18 px-12'>
 
-                <Decorations />
+                <Decorations ref={triggerRef} />
                 <h1 data-aos='fade-down' className='text-xl text-center'>WEDDING INVITATION</h1>
 
                 <Enter_once>
-                    <div style={{ boxShadow: 'inset 0 0 7px black' }}
+                    <div ref={triggerRef} style={{ boxShadow: 'inset 0 0 7px black' }}
                         className='mt-36 bg-white/10 p-4 leading-tight rounded-2xl backdrop-blur-xs'>
                         <p className='thanks text-4xl font-semibold italic'>Diyra & <br /> Diyraya</p>
                         <p className='ml-2 mt-1'>- Kamis, 19 09 1999</p>

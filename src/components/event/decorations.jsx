@@ -1,8 +1,8 @@
-import React from 'react'
+import { forwardRef } from 'react'
 import Enter_sway from '../../animations/enter_sway'
 import Enter_spin from '../../animations/enter_spin'
 
-const Decorations = () => {
+const Decorations = forwardRef((props, ref) => {
     return (
         <>
             <Enter_spin
@@ -17,9 +17,10 @@ const Decorations = () => {
                 img={'assets/image/orange-flower-1.png'}
                 className={'absolute -rotate-[10deg] -right-56 -top-20 -z-10 origin-bottom'}
                 rotate={['-10deg', '0', '-10deg']}
+                triggerRef={ref}
                 initialRotate={'-10deg'} />
         </>
     )
-}
+})
 
 export default Decorations

@@ -3,8 +3,16 @@ import Decorations from './decorations'
 
 const Quote = forwardRef((props, ref) => {
     return (
-        <section ref={ref} className='h-max p-8 text-black bg-fixed bg-contain bg-white'>
+        <section ref={ref} className='h-max pb-8 pt-24 text-black bg-fixed bg-contain bg-white'>
             <Decorations />
+
+            <img className='absolute top-0 w-6/12 object-cover mt-10'
+                style={{ filter: 'drop-shadow(0 0 5px white)' }}
+                src="assets/image/bismillah.png" alt="bismillah" />
+
+            <span className='italic text-center text-[14px] opacity-80'>
+                "Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang"
+            </span>
 
             <div className='w-full h-max p-6 rounded-lg px-2 flex flex-col items-center'>
                 <div data-aos='fade-left'

@@ -1,26 +1,28 @@
-import React from 'react'
+import { useRef } from 'react'
 import Event_components from './event_components'
 import Countdown from './countdown'
 import Decorations from './decorations'
 
 const Event = () => {
+    const trigger = useRef(null)
+
     return (
-        <section className='h-max pt-16 px-12 text-black bg-fixed bg-center bg-white'
+        <section ref={trigger} className='h-max pt-16 px-12 text-black bg-fixed bg-center bg-white'
         // style={{ backgroundImage: 'url(assets/image/bg-orange-flower.jpg)' }}
         >
-            <Decorations />
+            <Decorations ref={trigger} />
             <Event_components
-                title={'AKAD'}
-                date={'Minggu, 19 0 19 1999'}
-                time={'Pukul: 19.09 WITA s.d. Selesai'}
+                title={'Akad'}
+                date={'Rabu, 01 10 2025'}
+                time={'Pukul: 08.00 WITA s.d. Selesai'}
                 loc={'Rumah rumahan'}
                 addr={'Jln. rumah hamur rumahan Pt.123admin#'} />
 
             <Countdown />
             <Event_components
-                title={'RESEPSI'}
-                date={'Minggu, 19 0 19 1999'}
-                time={'Pukul: 00.00 WITA s.d. Selesai'}
+                title={'Resepsi'}
+                date={'Rabu, 01 10 2025'}
+                time={'Pukul: 10.00 WITA s.d. Selesai'}
                 loc={'Rumah rumahan'}
                 addr={'Jln. rumah hamur rumahan Pt.123admin#'} />
 
