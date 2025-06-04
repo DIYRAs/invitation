@@ -9,7 +9,7 @@ const Cover = ({ isOpen, setOpen, setPlay }) => {
         setOpen(prev => !prev)
         setPlay(prev => !prev)
 
-        document.documentElement.requestFullscreen()
+        // document.documentElement.requestFullscreen()
     }
 
     return (
@@ -22,7 +22,7 @@ const Cover = ({ isOpen, setOpen, setPlay }) => {
 
                 <Enter_once>
                     <div ref={triggerRef} style={{ boxShadow: 'inset 0 0 7px black' }}
-                        className='mt-[160px] bg-white/10 p-4 leading-tight rounded-2xl backdrop-blur-xs'>
+                        className='mt-[180px] bg-white/10 p-4 leading-tight rounded-2xl backdrop-blur-xs'>
                         <p className='thanks text-4xl font-semibold italic'>Diyra & <br /> Diyraya</p>
                         <p className='ml-2 mt-1'>- Rabu, 01 10 2025</p>
                         <div className='text-start'>

@@ -14,18 +14,47 @@ const Rsvp = () => {
     const handleInput = (e) => {
         const { name, value } = e.target
         setInput(prev => ({ ...prev, [name]: value }))
+        console.log(input)
     }
 
-    const handleSubmit = () => {
-        const existingData = JSON.parse(localStorage.getItem('data')) || [];
-        const updatedData = [...existingData, input];
+    const handleSubmit = async () => {
 
-        localStorage.setItem('data', JSON.stringify(updatedData));
-        setInput({
-            name: '',
-            count: '',
-            confirm: ''
-        })
+        try {
+            const res = await fetch('http://localhost/PHP/invitation/control.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    count: count,
+                    confirm: confirm
+                })
+            })
+            const data = await res.json()
+            console.log(data)
+
+            if (res.ok) {
+                setInput({
+                    name: '',
+                    count: '',
+                    confirm: ''
+                })
+            }
+        } catch (err) {
+            console.error(err);
+
+        }
+
+        // const existingData = JSON.parse(localStorage.getItem('data')) || [];
+        // const updatedData = [...existingData, input];
+
+        // localStorage.setItem('data', JSON.stringify(updatedData));
+        // setInput({
+        //     name: '',
+        //     count: '',
+        //     confirm: ''
+        // })
     }
 
     return (
@@ -53,8 +82,8 @@ const Rsvp = () => {
                     <select name='confirm' value={confirm} onChange={handleInput}
                         className="select bg-slate-900 text-white">
                         <option disabled={true}>Kehadiran</option>
-                        <option>Hadir</option>
-                        <option>Tidak Hadir</option>
+                        <option value={'Hadir'}>Hadir</option>
+                        <option value={'Tidak Hadir'}>Tidak Hadir</option>
                     </select>
                 </div>
 

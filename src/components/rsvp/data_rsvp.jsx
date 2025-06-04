@@ -3,16 +3,36 @@ import { useEffect, useState } from 'react'
 export default function Data_rsvp() {
     const [data, setData] = useState([]);
 
+    const handleGet = async () => {
+        try {
+            const res = await fetch('http://localhost/PHP/invitation/control.php', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = await res.json();
+
+            if (res.ok) {
+                setData(data.data);
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+
     useEffect(() => {
-        const stored = JSON.parse(localStorage.getItem('data')) || [];
-        setData(stored);
+        handleGet()
+        // const stored = JSON.parse(localStorage.getItem('data')) || [];
+        // setData(stored);
     }, []);
 
     return (
         <>
             <button
                 className="btn mt-6 z-50 bg-slate-900 text-white"
-                onClick={() => document.getElementById('my_modal_2').showModal()}
+                onClick={() => { document.getElementById('my_modal_2').showModal(); handleGet() }}
             >SEE RSVP</button>
 
             <dialog id="my_modal_2" className="modal bg-slate-900 text-white">
@@ -22,9 +42,9 @@ export default function Data_rsvp() {
                     {data.length > 0 ? (
                         data.map((item, index) => (
                             <div key={index} className="mb-2 p-2 rounded bg-slate-800">
-                                <p><strong>Nama:</strong> {item.name}</p>
-                                <p><strong>Jumlah:</strong> {item.count}</p>
-                                <p><strong>Konfirmasi:</strong> {item.confirm}</p>
+                                <p><strong>Nama:</strong> {item.nama}</p>
+                                <p><strong>Jumlah:</strong> {item.jumlah}</p>
+                                <p><strong>Konfirmasi:</strong> {item.kehadiran}</p>
                             </div>
                         ))
                     ) : (
